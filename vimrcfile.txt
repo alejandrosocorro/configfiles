@@ -1,0 +1,31 @@
+set nocompatible
+syntax on
+set ruler
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
+set hlsearch
+set incsearch
+set ignorecase
+" turn on line numbers:
+set number
+" Toggle line numbers and fold column for easy copying:
+nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+nnoremap <F4> :set nospell!<CR>
+nnoremap <F3> :set invpaste paste?<Enter>
+imap <F3> <C-O><F3>
+set pastetoggle=<F3>
+
+filetype plugin indent on
+filetype plugin on
+"autocmd FileType python set complete+=k~/.vim-x/syntax/python.vim isk+=.,(
+
+" Execute file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+colorscheme desert 
+"set spell spelllang=en_us
+
+set backspace=indent,eol,start
+autocmd VimEnter * NERDTree
